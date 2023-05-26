@@ -22,7 +22,7 @@ describe("Buy tacket", () => {
         await dateSelection(page, 2);
         await timeSelection(page, 2);
         
-        await seatSelection(page, 1, 3);
+        await seatSelection(page, 1, 5);
         await completionOfBooking(page, "button", "button");
         await page.waitForSelector('.ticket__info-qr', {
             visible: true,
