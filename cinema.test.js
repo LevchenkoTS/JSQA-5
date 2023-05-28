@@ -22,11 +22,9 @@ describe("Buy tacket", () => {
         await dateSelection(page, 2);
         await timeSelection(page, 2);
         
-        await seatSelection(page, 1, 5);
+        await seatSelection(page, 1, 4);
         await completionOfBooking(page, "button", "button");
-        await page.waitForSelector('.ticket__info-qr', {
-            visible: true,
-        });
+        
         const actual = await page.$eval(".ticket__info-qr", link => link.getAttribute('src') );
         expect(actual).toEqual("i/QR_code.png");
     });
@@ -35,7 +33,8 @@ describe("Buy tacket", () => {
  
         await dateSelection(page, 4);
         await timeSelection(page, 2);
-        await seatSelection(page, 3, 6);
+        await seatSelection(page, 4, 6);
+        await seatSelection(page, 4, 7);
         await completionOfBooking(page, "button", "button");
         
         const actual = await page.$eval(".ticket__info-qr", link => link.getAttribute('src') );
