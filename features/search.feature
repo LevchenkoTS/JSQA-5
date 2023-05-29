@@ -14,6 +14,7 @@ Feature: Booking tickets
         When choose the date today + 4 day
         When user selects time 2
         When user select seats row "6" and seat "3"
+        When user select seats row "6" and seat "4"
         Then user gets "QR_code"
 
     Scenario: Should be Inactive booking button

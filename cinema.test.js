@@ -29,7 +29,7 @@ describe("Buy tacket", () => {
         expect(actual).toEqual("i/QR_code.png");
     });
 
-    test("Booking two tickets in 3 days", async () => {
+    test.only("Booking two tickets in 3 days", async () => {
  
         await dateSelection(page, 4);
         await timeSelection(page, 2);
